@@ -8,32 +8,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Title  -->
-    <title>Web Template</title>
+    <title>Doom Template</title>
 
     <!-- Style CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/icofont.min.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 
 </head>
 <body>
+<!--Page Loader-->
+<div id="preloader">
+    <div class="loader">
+    </div>
+</div>
 <!-------------------START HEADER AREA------------------->
-<header id="home">
-	<div class="container-fluid">
+<header id="header">
+	<div class="container">
 		<div class="header_area_inner">
-			<nav class="navbar navbar-expand-lg navbar-light">
+			<nav class="navbar navbar-expand-lg p-0">
 				<a class="navbar-brand" href="#"><img src="images/logo.png" alt=""></a>
-				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-
-				<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<div class="collapse navbar-collapse" id="main_nav">
 					<ul class="navbar-nav nav-item">
-						<li><a class="active" href="#">Home</a></li>
-						<li><a href="#">About us</a></li>
-						<li><a href="#">Services</a></li>
-						<li><a href="#">portfolio</a></li>
-						<li><a href="#">blog</a></li>
-						<li><a href="#">Contact</a></li>
+						<li class="slider active"><a href="#slider">Home</a></li>
+						<li class="services"><a href="#services">Services</a></li>
+						<li class="reasons"><a href="#reasons">About us</a></li>
+						<li class="product"><a href="#product">Product</a></li>
+						<li class="faq"><a href="#faq">FAQ</a></li>
 					</ul>
 				</div>
 				<div class="nav_right d-none d-lg-flex">
@@ -42,13 +45,31 @@
 				</div>
 			</nav>
 		</div>
+		<!--	Mobile Menu -->
+	 <button class="navbar-btn d-lg-none" type="button">
+        <span class="icofont-navigation-menu"></span>
+    </button>
+    <div class="mobile-menu">
+        <button class="navbar-btn d-lg-none" type="button">
+            <span class="icofont-close"></span>
+        </button>
+       <div class="mobile_mav">
+            <ul>
+               <li class="slider active"><a href="#slider">Home</a></li>
+                <li class="services"><a href="#services">Services</a></li>
+                <li class="reasons"><a href="#reasons">About us</a></li>
+                <li class="product"><a href="#product">Product</a></li>
+                <li class="faq"><a href="#faq">FAQ</a></li>
+            </ul>
+       </div>
+    </div>
 	</div>
+	
 </header>
 <!-------------------END HEADER AREA------------------->
 
-
 <!-------------------START SLIDER AREA------------------->
-<section class="slider-area">
+<section id="slider" class="slider-area">
 
 	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
@@ -97,10 +118,8 @@
 </section>
 <!-------------------END SLIDER AREA------------------->
 
-
-
 <!-------------------START SERVICES AREA------------------->
-<section class="services-area">
+<section id="services" class="services-area">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-4 col-md-4 col-sm-6">
@@ -175,10 +194,8 @@
 </section>
 <!-------------------END SERVICES AREA------------------->
 
-
-
 <!-------------------START THEME AREA------------------->
-<section class="theme-area">
+<section id="theme" class="theme-area">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-12">
@@ -223,11 +240,8 @@
 </section>
 <!-------------------END THEME AREA------------------->
 
-
-
-
 <!-------------------START REASONS AREA------------------->
-<section class="reasons-area">
+<section id="reasons" class="reasons-area">
 	<div class="container">
 		<div class="reasons_wrapper">
 			<div class="row">
@@ -323,10 +337,8 @@
 </section>
 <!-------------------END REASONS AREA------------------->
 
-
-
 <!-------------------START PRODUCT AREA------------------->
-<section class="product-area">
+<section id="product" class="product-area">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-6 col-md-12 col-sm-12">
@@ -408,11 +420,8 @@
 </section>
 <!-------------------END PRODUCT AREA------------------->
 
-
-
-
 <!-------------------START FAQ AREA------------------->
-<section class="faqStuff-area">
+<section id="faq" class="faqStuff-area">
 	<div class="container">
 		<div class="row justify-content-center">
 			<div class="col-lg-6 col-md-6">
@@ -470,11 +479,8 @@
 </section>
 <!-------------------END FAQ AREA------------------->
 
-
-
-
 <!-------------------START COMPANY LOGO AREA------------------->
-<section class="logo-area">
+<section id="company" class="logo-area">
 	<div class="container">
 		<div class="row">
 			<div class="col">
@@ -496,12 +502,6 @@
 	</div>
 </section>
 <!-------------------END COMPANY LOGO AREA------------------->
-
-
-
-
-
-
 
 <!-------------------START FOOTER AREA------------------->
 <footer>
@@ -596,6 +596,7 @@
     <script src="js/jquery-3.4.1.min.js"></script>
     <!-- Bootstrap js -->
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.smooth-scroll.js"></script>
     <!-- Main js -->
     <script src="js/main.js"></script>
 
