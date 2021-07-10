@@ -1,24 +1,59 @@
-//SCROLL TO TOP
-	function topFunction(){
-			window.scrollTo({top: 0, behavior:"smooth"});
-		}
+//   Smooth Scroll Script
+    $('#header a').smoothScroll();
 
+// jQuery preloader
+    $(window).on('load', function(){
+        $('#preloader').fadeOut(2000)
+    })
 
-jQuery(document).ready(function () {
-		//STICKY MENU
+//STICKY MENU
 		var topbutton = document.getElementById("topbtn");
 		window.onscroll = function(){scrollFunction()};
 		function scrollFunction(){
 			if(document.body.scrollTop > 100 || document.documentElement.scrollTop > 100){
-				$("nav").addClass("sticky");
+				$("#header").addClass("sticky");
 				topbutton.style.display = "block";
 				
 			}else{
-				$("nav").removeClass("sticky");
+				$("#header").removeClass("sticky");
 				topbutton.style.display = "none";
 			}
 		}
-		//  Video
+
+// Scroll to Menu ACtive Script
+     const sections = document.querySelectorAll('section');
+    const navLi = document.querySelectorAll('#main_nav li, .mobile_mav li');
+    
+    window.addEventListener('scroll', ()=> {
+        let current = '';
+    
+    sections.forEach( section => {
+        const id= section.attributes.id;
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.clientHeight;
+        
+        if(pageYOffset >= (sectionTop - sectionHeight/3)){
+            current = section.getAttribute('id')
+            
+        }  
+    })
+        navLi.forEach( li => {
+            li.classList.remove('active');
+            if(li.classList.contains(current)){
+               li.classList.add('active')
+               }
+        })
+})
+
+//  Mobile Menu
+   $(document).on('click','.navbar-btn , .mobile-menu li a',function(){
+       if($('#header').hasClass("mobile-nav-active")){
+            $('#header').removeClass('mobile-nav-active')
+       }else{
+           $('#header').addClass('mobile-nav-active')
+       }
+    });
+//  Video Script
 		$('.video_icon').click(function () {
 			$('video')[0].play();
 		});
@@ -30,12 +65,12 @@ jQuery(document).ready(function () {
 		});
 
 
-	//  Counter JS
+//  Counter JS
 		$('.count').each(function () {
 				$(this).prop('Counter', 0).animate({
 					Counter: $(this).text()
 				}, {
-					duration: 8000,
+					duration: 2000,
 					easing: 'swing',
 					step: function (now) {
 						$(this).text(Math.ceil(now));
@@ -48,7 +83,8 @@ jQuery(document).ready(function () {
 		var per = $this.attr("per");
 			$this.css('width',per+'%');
 	});
-});
 
-
-
+//SCROLL TO TOP
+	function topFunction(){
+			window.scrollTo({top: 0, behavior:"smooth"});
+		}
